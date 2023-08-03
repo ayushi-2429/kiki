@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taskkk</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+    <div class="glass">
+        <form action="/" method="post">
+            <label for="lname">Task:</label><br>
+            <input type="text" id="lname" name="lname" value="" required><br><br>
+            <input type="submit" value="Submit"> <br>
+        </form>
+
+        <!-- action has a link that will match the post route, which we created -->
+        <% list.forEach(function(item){ %>
+        <form action="/delete/<%- item._id %>" method="post">
+            <%- item.lname %>
+            <button>Delete</button> <br>
+        </form>
+        <% }) %>
+    </div>
+</body>
+
+</html>
